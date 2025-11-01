@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacotes | Wanderlust Co.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ======== RESET ======== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Poppins', sans-serif;
+      color:#fff;
+      min-height:100vh;
+      background: linear-gradient(120deg, #11C5D9, #1147D9, #2DDBB1, #1186D9, #1B11D9, #5AA4D9);
+      background-size: 1200% 1200%;
+      animation: gradientBG 20s ease infinite;
+    }
+    @keyframes gradientBG {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    /* ======== HEADER ======== */
+    header.navbar {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      padding: 1rem 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky; top:0; z-index:1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .logo { font-family:'Poppins', sans-serif; font-size:2rem; font-weight:700; color:#fff; }
+    .logo span { color:#2DDBB1; }
+    .nav-links { list-style:none; display:flex; gap:2rem; }
+    .nav-links a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s; }
+    .nav-links a:hover, .nav-links .ativo { color:#2DDBB1; }
+
+    /* ======== PACOTES ======== */
+    .section.pacotes { padding:5rem 10%; text-align:center; }
+    .section.pacotes h2 { font-size:2.8rem; margin-bottom:1rem; color:#2DDBB1; }
+    .section.pacotes .intro { font-size:1.2rem; margin-bottom:3rem; }
+
+    .grid-banner {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .pacote-container { perspective:1000px; }
+    .banner-card {
+      position:relative;
+      border-radius:2rem;
+      overflow:hidden;
+      cursor:pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-size:cover;
+      background-position:center;
+      height:400px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+    .banner-card:hover { transform:translateY(-5px); box-shadow:0 15px 40px rgba(0,0,0,0.5); }
+
+    .banner-overlay {
+      background: rgba(17,71,217,0.6);
+      padding:1.5rem 1rem;
+      border-bottom-left-radius:2rem; border-bottom-right-radius:2rem;
+      color:#fff;
+    }
+    .banner-overlay h3 { font-size:1.5rem; margin-bottom:0.3rem; color:#2DDBB1; }
+    .banner-overlay .sub { font-size:0.9rem; margin-bottom:0.5rem; display:block; }
+    .banner-overlay .benefits p { font-size:0.9rem; margin:0.2rem 0; }
+    .banner-overlay .price { font-weight:600; margin-top:0.5rem; }
+    .banner-overlay .parcelas { font-size:0.8rem; margin-top:0.3rem; color:#fff; }
+
+    /* ======== DETALHES PACOTE ======== */
+    .detalhes-pacote {
+      margin-top:3rem;
+      background: rgba(0,0,0,0.55);
+      padding:2rem;
+      border-radius:2rem;
+      max-width:800px;
+      margin-left:auto; margin-right:auto;
+      box-shadow:0 12px 35px rgba(0,0,0,0.4);
+    }
+    .detalhes-pacote h3 { color:#2DDBB1; margin-bottom:1rem; }
+    .detalhes-pacote ul { list-style:inside circle; margin-bottom:1rem; }
+    .detalhes-pacote li { margin:0.5rem 0; }
+
+    .btn-back {
+      padding:0.8rem 1.8rem;
+      border-radius:50px;
+      border:none;
+      background:#2DDBB1;
+      color:#1147D9;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .btn-back:hover { background:#11C5D9; }
+
+    @media(max-width:900px){ .section.pacotes{ padding:4rem 5%; } }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Wanderlust <span>Co.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="pacotes.html" class="ativo">Pacotes</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section pacotes">
+    <h2>🌴 Pacotes Wanderlust Co.</h2>
+    <p class="intro">Clique em um pacote para ver o roteiro completo.</p>
+
+    <div class="grid-banner" id="pacotesGrid">
+      <!-- PACOTE 1 -->
+      <div class="pacote-container">
+        <div class="banner-card" style="background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1000&q=80');" data-roteiro="roteiro1">
+          <div class="banner-overlay">
+            <h3>Essencial Floripa</h3>
+            <span class="sub">4 noites / 5 dias</span>
+            <div class="benefits">
+              <p>✅ Café da manhã incluso</p>
+              <p>✅ Hotel 3★ confortável</p>
+              <p>✅ Passeios nas praias mais famosas</p>
+            </div>
+            <div class="price">R$ 650 - 800</div>
+            <p class="parcelas">Clique para ver o roteiro</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PACOTE 2 -->
+      <div class="pacote-container">
+        <div class="banner-card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80');" data-roteiro="roteiro2">
+          <div class="banner-overlay">
+            <h3>Praias & Relax</h3>
+            <span class="sub">5 noites / 6 dias</span>
+            <div class="benefits">
+              <p>✅ Hotel 4★ à beira-mar</p>
+              <p>✅ Jantar de boas-vindas</p>
+              <p>✅ Passeio de barco Ilha do Campeche</p>
+            </div>
+            <div class="price">R$ 1.200 - 1.500</div>
+            <p class="parcelas">Clique para ver o roteiro</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PACOTE 3 -->
+      <div class="pacote-container">
+        <div class="banner-card" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80');" data-roteiro="roteiro3">
+          <div class="banner-overlay">
+            <h3>Aventura & Natureza</h3>
+            <span class="sub">6 noites / 7 dias</span>
+            <div class="benefits">
+              <p>✅ Pousada ecológica</p>
+              <p>✅ Trilha, surf e cachoeiras</p>
+              <p>✅ Guia local incluso</p>
+            </div>
+            <div class="price">R$ 1.400 - 1.700</div>
+            <p class="parcelas">Clique para ver o roteiro</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PACOTE 4 -->
+      <div class="pacote-container">
+        <div class="banner-card" style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80');" data-roteiro="roteiro4">
+          <div class="banner-overlay">
+            <h3>Luxo Floripa</h3>
+            <span class="sub">7 noites / 8 dias</span>
+            <div class="benefits">
+              <p>✅ Resort 5★ exclusivo</p>
+              <p>✅ Lancha e traslado privativos</p>
+              <p>✅ Voo panorâmico incluso</p>
+            </div>
+            <div class="price">R$ 2.500 - 3.500</div>
+            <p class="parcelas">Clique para ver o roteiro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= ROTEIROS ================= -->
+    <div id="roteiro1" class="detalhes-pacote" style="display:none;">
+      <h3>Roteiro – Essencial Floripa</h3>
+      <ul>
+        <li>Dia 1: Chegada e check-in</li>
+        <li>Dia 2: Praia da Joaquina e surf</li>
+        <li>Dia 3: Tour histórico no centro</li>
+        <li>Dia 4: Ilha do Campeche</li>
+        <li>Dia 5: Retorno</li>
+      </ul>
+      <button class="btn-back">Voltar</button>
+    </div>
+
+    <div id="roteiro2" class="detalhes-pacote" style="display:none;">
+      <h3>Roteiro – Praias & Relax</h3>
+      <ul>
+        <li>Dia 1: Check-in no hotel e jantar de boas-vindas</li>
+        <li>Dia 2: Dia livre para praia e spa</li>
+        <li>Dia 3: Passeio de barco Ilha do Campeche</li>
+        <li>Dia 4: Massagem relaxante + pôr do sol</li>
+        <li>Dia 5: Dia livre</li>
+        <li>Dia 6: Retorno</li>
+      </ul>
+      <button class="btn-back">Voltar</button>
+    </div>
+
+    <div id="roteiro3" class="detalhes-pacote" style="display:none;">
+      <h3>Roteiro – Aventura & Natureza</h3>
+      <ul>
+        <li>Dia 1: Chegada e integração com guia</li>
+        <li>Dia 2: Trilha na Costa da Lagoa</li>
+        <li>Dia 3: Surf na Praia Mole</li>
+        <li>Dia 4: Visita a cachoeiras locais</li>
+        <li>Dia 5: Caiaque e observação da fauna</li>
+        <li>Dia 6: Tour ecológico</li>
+        <li>Dia 7: Retorno</li>
+      </ul>
+      <button class="btn-back">Voltar</button>
+    </div>
+
+    <div id="roteiro4" class="detalhes-pacote" style="display:none;">
+      <h3>Roteiro – Luxo Floripa</h3>
+      <ul>
+        <li>Dia 1: Transfer privativo + check-in no resort</li>
+        <li>Dia 2: Dia livre com acesso à piscina infinita</li>
+        <li>Dia 3: Passeio de lancha privativo</li>
+        <li>Dia 4: Spa e massagem premium</li>
+        <li>Dia 5: Voo panorâmico pela ilha</li>
+        <li>Dia 6: Jantar gastronômico</li>
+        <li>Dia 7: Dia livre</li>
+        <li>Dia 8: Check-out e retorno</li>
+      </ul>
+      <button class="btn-back">Voltar</button>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:2rem; font-size:0.95rem;">&copy; 2025 Wanderlust Co. — Todos os direitos reservados.</footer>
+
+  <script>
+    const pacotesGrid = document.getElementById('pacotesGrid');
+    const pacotes = document.querySelectorAll('.banner-card');
+    const roteiros = document.querySelectorAll('.detalhes-pacote');
+
+    pacotes.forEach(pacote => {
+      pacote.addEventListener('click', () => {
+        const idRoteiro = pacote.getAttribute('data-roteiro');
+        roteiros.forEach(r => r.style.display = 'none');
+        pacotesGrid.style.display = 'none';
+        document.getElementById(idRoteiro).style.display = 'block';
+        window.scrollTo({ top: 200, behavior: 'smooth' });
+      });
+    });
+
+    const botoesVoltar = document.querySelectorAll('.btn-back');
+    botoesVoltar.forEach(btn => {
+      btn.addEventListener('click', () => {
+        roteiros.forEach(r => r.style.display = 'none');
+        pacotesGrid.style.display = 'grid';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

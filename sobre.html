@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós | Wanderlust Co.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ======== RESET ======== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, #11C5D9, #1147D9, #2DDBB1, #1186D9, #1B11D9, #5AA4D9);
+      background-size: 1200% 1200%;
+      animation: gradientBG 20s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    /* ======== HEADER ======== */
+    header.navbar {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .logo span { color: #2DDBB1; }
+
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links a {
+      color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links .ativo { color: #2DDBB1; }
+
+    /* ======== HERO COM CAIXA ======== */
+    .about-hero {
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-box {
+      display: inline-block;
+      background: rgba(17, 71, 217, 0.7);
+      padding: 3rem 4rem;
+      border-radius: 2rem;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+    }
+
+    .hero-box::after {
+      content: "✨🌍";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 2.5rem;
+      animation: float 4s infinite alternate;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-15px) rotate(15deg); }
+    }
+
+    .hero-box h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #2DDBB1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-box p {
+      font-size: 1.3rem;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ======== SEÇÃO PRINCIPAL ======== */
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 10%;
+      gap: 3rem;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 320px;
+      background: rgba(0,0,0,0.55);
+      padding: 2.5rem;
+      border-radius: 1.8rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-text:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.35); }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #2DDBB1;
+      margin-bottom: 1.2rem;
+    }
+    .about-text p { line-height: 1.8; font-size: 1.1rem; color: #f0f0f0; margin-bottom: 1rem; }
+    .about-text strong { color: #11C5D9; }
+
+    .about-image {
+      flex: 1;
+      min-width: 320px;
+      text-align: center;
+    }
+    .about-image img {
+      width: 90%;
+      border-radius: 2rem;
+      box-shadow: 0 12px 45px rgba(0,0,0,0.3);
+      transition: transform 0.5s ease;
+    }
+    .about-image img:hover { transform: scale(1.05); }
+
+    /* ======== VALORES ======== */
+    .valores-section {
+      padding: 5rem 10%;
+      text-align: center;
+      margin: 4rem 8%;
+      background: rgba(0,0,0,0.45);
+      border-radius: 2rem;
+      box-shadow: 0 0 30px rgba(0,0,0,0.25);
+    }
+    .valores-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: #2DDBB1;
+      margin-bottom: 3rem;
+    }
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .valor {
+      background: rgba(17,71,217,0.75);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      color: #fff;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .valor:hover {
+      transform: translateY(-10px);
+      background: rgba(45,219,177,0.85);
+    }
+    .valor h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #11C5D9;
+    }
+    .valor p { font-size: 1rem; line-height: 1.6; }
+
+    /* ======== CTA ======== */
+    .about-cta {
+      text-align: center;
+      padding: 4rem 2rem;
+      margin: 4rem 8%;
+      background: rgba(17,134,217,0.7);
+      border-radius: 1.8rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .about-cta:hover { transform: translateY(-5px); }
+    .about-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+    .about-cta p { font-size: 1.15rem; opacity: 0.95; }
+
+    /* ======== FOOTER ======== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.95rem;
+      color: #fff;
+      opacity: 0.85;
+    }
+
+    /* ======== RESPONSIVO ======== */
+    @media (max-width: 900px) {
+      .about-section { flex-direction: column; text-align: center; }
+      .about-image img { width: 100%; }
+      .about-text h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Wanderlust <span>Co.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" class="ativo">Sobre Nós</a></li>
+        <li><a href="pacotes.html">Pacotes</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="hero-box">
+      <h1>Sobre Nós</h1>
+      <p>Transformamos viagens em experiências vibrantes e inesquecíveis. 🌍✨</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO PRINCIPAL -->
+  <main>
+    <section class="about-section">
+      <div class="about-text">
+        <h2>Nossa História</h2>
+        <p>A <strong>Wanderlust Co.</strong> nasceu com o propósito de unir emoção, natureza e design de experiências. Criamos conexões entre pessoas e culturas — com estilo e significado.</p>
+        <p>Viajar é mais do que se mover: é sentir o mundo de perto. Cada detalhe é pensado para que sua jornada seja leve, divertida e memorável.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Equipe Wanderlust Co.">
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="valores-section">
+      <h2>Nosso Propósito 💫</h2>
+      <div class="valores-grid">
+        <div class="valor">
+          <h3>🌿 Missão</h3>
+          <p>Oferecer experiências únicas e sustentáveis, que inspirem a explorar o mundo com alegria e propósito.</p>
+        </div>
+        <div class="valor">
+          <h3>🌎 Visão</h3>
+          <p>Ser referência global em viagens criativas, conectando pessoas e culturas por meio da curiosidade e empatia.</p>
+        </div>
+        <div class="valor">
+          <h3>💛 Valores</h3>
+          <p>Autenticidade, empatia, excelência e amor pela diversidade — porque viajar é um ato de liberdade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <h2>Pronto para viver sua próxima jornada?</h2>
+      <p>Com a Wanderlust Co., cada viagem é um mergulho no extraordinário. ✈️💙</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wanderlust Co. — Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

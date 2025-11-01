@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Wanderlust Co.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ======== RESET ======== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, #11C5D9, #1147D9, #2DDBB1, #1186D9, #1B11D9, #5AA4D9);
+      background-size: 1200% 1200%;
+      animation: gradientBG 20s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    /* ======== HEADER ======== */
+    header.navbar {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .logo span { color: #2DDBB1; }
+
+    .nav-links { list-style: none; display: flex; gap: 2rem; }
+    .nav-links a {
+      color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links .ativo { color: #2DDBB1; }
+
+    /* ======== HERO CAIXA ======== */
+    .contato-hero {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-box {
+      display: inline-block;
+      background: rgba(17, 71, 217, 0.7);
+      padding: 3rem 4rem;
+      border-radius: 2rem;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+    }
+
+    .hero-box h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #2DDBB1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-box p {
+      font-size: 1.3rem;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ======== FORMULÁRIO ======== */
+    main.section {
+      padding: 4rem 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .form-contato {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: rgba(0,0,0,0.55);
+      padding: 2.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-contato:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+    }
+
+    .form-contato input,
+    .form-contato textarea {
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      resize: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .form-contato input::placeholder,
+    .form-contato textarea::placeholder { color: rgba(255,255,255,0.7); }
+
+    .form-contato input:focus,
+    .form-contato textarea:focus { background: rgba(255,255,255,0.25); }
+
+    .form-contato button.btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      background: #2DDBB1;
+      color: #1147D9;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .form-contato button.btn:hover {
+      background: #11C5D9;
+      transform: translateY(-2px);
+    }
+
+    /* ======== INFORMAÇÕES ======== */
+    .info {
+      text-align: center;
+      max-width: 600px;
+      color: #fff;
+      background: rgba(17,71,217,0.6);
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    .info strong { color: #2DDBB1; }
+
+    /* ======== FOOTER ======== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.95rem;
+      color: #fff;
+      opacity: 0.85;
+    }
+
+    /* ======== RESPONSIVO ======== */
+    @media (max-width: 900px) {
+      main.section { padding: 4rem 5%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Wanderlust <span>Co.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="pacotes.html">Pacotes</a></li>
+        <li><a href="contato.html" class="ativo">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="contato-hero">
+    <div class="hero-box">
+      <h1>Fale Conosco</h1>
+      <p>Quer planejar sua próxima viagem? Envie sua mensagem e nossa equipe entrará em contato com você.</p>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <main class="section">
+    <form class="form-contato">
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea placeholder="Mensagem ou pedido de orçamento" rows="5" required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+
+    <div class="info">
+      <p><strong>Endereço:</strong> Rua da Felicidade, 123 — Florianópolis/SC</p>
+      <p><strong>Telefone:</strong> (48) 5555-5555</p>
+      <p><strong>E-mail:</strong> contato@wanderlustco.com.br</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wanderlust Co. — Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

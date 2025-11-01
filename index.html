@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderlust Co. | Início</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Poppins', sans-serif;
+      min-height:100vh;
+      color:#fff;
+      background: linear-gradient(120deg, #11C5D9, #1147D9, #2DDBB1, #1186D9, #1B11D9, #5AA4D9);
+      background-size: 1200% 1200%;
+      animation: gradientBG 20s ease infinite;
+    }
+    @keyframes gradientBG {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    header.navbar {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      padding: 1rem 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky; top:0; z-index:1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .logo { font-size:2rem; font-weight:700; color:#fff; }
+    .logo span { color:#2DDBB1; }
+    .nav-links { list-style:none; display:flex; gap:2rem; }
+    .nav-links a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s; }
+    .nav-links a:hover, .nav-links .ativo { color:#2DDBB1; }
+
+    .hero {
+      position:relative;
+      height:calc(100vh - 80px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      overflow:hidden;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80'); /* Floripa real */
+      background-size: cover;
+      background-position: center;
+    }
+    .hero::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; width:100%; height:100%;
+      background:rgba(0,0,0,0.45);
+      z-index:1;
+    }
+    .hero-content {
+      position:relative;
+      z-index:2;
+      max-width:800px;
+      animation:fadeInUp 1.5s ease forwards;
+    }
+    .hero-content h1 {
+      font-size:3rem;
+      margin-bottom:1rem;
+      color:#2DDBB1;
+    }
+    .hero-content p {
+      font-size:1.2rem;
+      margin-bottom:2rem;
+    }
+    .btn {
+      display:inline-block;
+      padding:1rem 2.5rem;
+      background:#2DDBB1;
+      color:#1147D9;
+      font-weight:600;
+      border-radius:50px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+    .btn:hover { background:#11C5D9; color:#1B11D9; transform:scale(1.05); }
+
+    @keyframes fadeInUp {
+      0% { opacity:0; transform:translateY(50px); }
+      100% { opacity:1; transform:translateY(0); }
+    }
+
+    .section { padding:5rem 10%; text-align:center; }
+    .section h2 { font-size:2.8rem; margin-bottom:1rem; color:#2DDBB1; }
+    .section p { font-size:1.2rem; margin-bottom:3rem; }
+
+    .grid-banner {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .banner-card {
+      position:relative;
+      border-radius:2rem;
+      overflow:hidden;
+      cursor:pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-size:cover;
+      background-position:center;
+      height:300px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+    .banner-card:hover { transform:translateY(-5px); box-shadow:0 15px 40px rgba(0,0,0,0.5); }
+    .banner-overlay {
+      background: rgba(17,71,217,0.6);
+      padding:1.5rem 1rem;
+      border-bottom-left-radius:2rem; border-bottom-right-radius:2rem;
+      color:#fff;
+    }
+    .banner-overlay h3 { font-size:1.5rem; margin-bottom:0.3rem; color:#2DDBB1; }
+    .banner-overlay .sub { font-size:0.9rem; margin-bottom:0.5rem; display:block; }
+    .banner-overlay .benefits p { font-size:0.9rem; margin:0.2rem 0; }
+    .banner-overlay .price { font-weight:600; margin-top:0.5rem; }
+    .banner-overlay .parcelas { font-size:0.8rem; margin-top:0.3rem; color:#fff; }
+
+    @media(max-width:900px){ .section{ padding:4rem 5%; } }
+    @media(max-width:768px){
+      .hero-content h1{ font-size:2.2rem; }
+      .hero-content p{ font-size:1rem; }
+      .btn{ padding:0.8rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Wanderlust <span>Co.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="ativo">Início</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="pacotes.html">Pacotes</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore Florianópolis com conforto e estilo</h1>
+      <p>Wanderlust Co. oferece experiências exclusivas e roteiros inesquecíveis na Ilha da Magia. 🌴✨</p>
+      <a href="pacotes.html" class="btn">Descubra Nossos Pacotes</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Pacotes em Destaque</h2>
+    <p>Clique em um pacote para ver o roteiro completo.</p>
+    <div class="grid-banner">
+      <div class="banner-card" style="background-image:url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-overlay">
+          <h3>Essencial Floripa</h3>
+          <span class="sub">4 noites / 5 dias</span>
+          <div class="benefits">
+            <p>✅ Café da manhã incluso</p>
+            <p>✅ Hotel 3★ confortável</p>
+            <p>✅ Passeios nas praias mais famosas</p>
+          </div>
+          <div class="price">R$ 650 - 800</div>
+          <p class="parcelas">Veja mais em Pacotes</p>
+        </div>
+      </div>
+      <div class="banner-card" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-overlay">
+          <h3>Praias & Relax</h3>
+          <span class="sub">5 noites / 6 dias</span>
+          <div class="benefits">
+            <p>✅ Hotel 4★ à beira-mar</p>
+            <p>✅ Jantar de boas-vindas</p>
+            <p>✅ Passeio de barco Ilha do Campeche</p>
+          </div>
+          <div class="price">R$ 1.200 - 1.500</div>
+          <p class="parcelas">Veja mais em Pacotes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:2rem; font-size:0.95rem;">
+    &copy; 2025 Wanderlust Co. — Todos os direitos reservados.
+  </footer>
+</body>
+</html>
